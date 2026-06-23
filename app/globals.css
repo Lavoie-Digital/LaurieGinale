@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ===========================================================================
+   LaurieGinale — Design System
+   Watercolor pastel brand, editorial-luxe, clean & modern.
+   =========================================================================== */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* Brand palette — extracted from the watercolor logo */
+  --color-cream: #fbf7fb;
+  --color-cream-2: #f4ecf6;
+  --color-ink: #2b2230;
+  --color-ink-soft: #5b4f63;
+  --color-muted: #8a7d92;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-lavender: #b388d9;
+  --color-lavender-soft: #e7d6f5;
+  --color-grape: #6a3f86;
+
+  --color-rose: #e14b8a;
+  --color-rose-soft: #f6c9de;
+  --color-pink: #f4b6d3;
+
+  --color-butter: #f6dd8a;
+  --color-mint: #b7e3b0;
+  --color-peach: #f8cba6;
+
+  /* Fonts (wired to next/font CSS variables) */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-script: var(--font-caveat), cursive;
+
+  /* Radius + shadow scale */
+  --radius-xl2: 1.75rem;
+  --shadow-soft: 0 18px 50px -22px rgba(106, 63, 134, 0.35);
+  --shadow-card: 0 12px 40px -20px rgba(106, 63, 134, 0.28);
+  --shadow-glow: 0 0 60px -10px rgba(225, 75, 138, 0.35);
+
+  /* Animations */
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-float-slow: float 14s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-22px) translateX(10px); }
   }
 }
 
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Soft watercolor wash for the page backdrop */
+.bg-watercolor {
+  background:
+    radial-gradient(46rem 38rem at 8% -6%, rgba(179, 136, 217, 0.20), transparent 60%),
+    radial-gradient(40rem 34rem at 102% 4%, rgba(225, 75, 138, 0.14), transparent 58%),
+    radial-gradient(44rem 40rem at 50% 110%, rgba(183, 227, 176, 0.18), transparent 60%),
+    var(--color-cream);
+}
+
+/* Editorial headings */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(100deg, #6a3f86 0%, #e14b8a 45%, #b388d9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Softer hero ambient colors on mobile (paler) */
+@media (max-width: 1023px) {
+  .hero-ambient {
+    opacity: 0.5;
+  }
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Thin underline link */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover {
+  background-size: 100% 1.5px;
+}
+
+/* Hide scrollbar for horizontal galleries */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.marquee-pause:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+::selection {
+  background: rgba(225, 75, 138, 0.22);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
