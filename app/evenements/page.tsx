@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Événements — Mariages, corpo & fêtes | LaurieGinale",
   description:
-    "Commandes pour événements : mariages, événements corporatifs, fêtes familiales, baby showers, tables de desserts et plus. Faits main à Chicoutimi.",
+    "Commandes pour événements : mariages, événements corporatifs, fêtes familiales, baby showers, tables de desserts et plus. Faits maison à Chicoutimi.",
 };
 
 const eventTypes = [
@@ -66,7 +66,7 @@ const eventTypes = [
 const steps = [
   { n: "01", title: "On discute", text: "Vous nous racontez l'occasion, le thème, le nombre d'invités et vos envies." },
   { n: "02", title: "On imagine", text: "Laurie vous propose une création sur mesure avec saveurs et estimation." },
-  { n: "03", title: "On régale", text: "Le jour J, vos douceurs sont prêtes — fraîches, faites main, prêtes à épater." },
+  { n: "03", title: "On régale", text: "Le jour J, vos douceurs sont prêtes — fraîches, faites maison, prêtes à épater." },
 ];
 
 export default function EvenementsPage() {

@@ -93,6 +93,14 @@ body {
   color: transparent;
 }
 
+/* Light gradient text — for use over dark/photo backgrounds */
+.text-gradient-light {
+  background: linear-gradient(100deg, #f4b6d3 0%, #f6dd8a 50%, #e7d6f5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Softer hero ambient colors on mobile (paler) */
 @media (max-width: 1023px) {
   .hero-ambient {

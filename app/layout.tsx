@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CartDrawer from "@/components/CartDrawer";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -24,7 +25,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "LaurieGinale — Chocolaterie & Pâtisserie artisanale | Chicoutimi",
   description:
-    "Chocolats fins, trompe-l'œil bluffants et pâtisseries sur mesure, faits main à Chicoutimi. Commandez en ligne ou pour vos événements.",
+    "Chocolats fins, trompe-l'œil bluffants et pâtisseries sur mesure, faits maison à Chicoutimi. Commandez en ligne ou pour vos événements.",
   keywords: [
     "chocolaterie",
     "pâtisserie",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LaurieGinale — Chocolaterie & Pâtisserie artisanale",
     description:
-      "Des petits luxes à s'offrir, faits main à Chicoutimi. Chocolats fins, trompe-l'œil et créations sur mesure.",
+      "Des petits luxes à s'offrir, faits maison à Chicoutimi. Chocolats fins, trompe-l'œil et créations sur mesure.",
     type: "website",
     locale: "fr_CA",
   },
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <CartDrawer />
         </CartProvider>
       </body>
     </html>

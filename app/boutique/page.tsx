@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Boutique en ligne — Chocolats, trompe-l'œil & pâtisseries | LaurieGinale",
   description:
-    "Commandez en ligne : trompe-l'œil, petits gâteaux et cupcakes, chocolats fins et la collection Fête du Canada. Faits main à Chicoutimi.",
+    "Commandez en ligne : trompe-l'œil, petits gâteaux et cupcakes, chocolats fins et la collection St-Valentin. Faits maison à Chicoutimi.",
 };
 
 export default function BoutiquePage() {
@@ -16,7 +16,7 @@ export default function BoutiquePage() {
       <PageHeader
         eyebrow="la boutique"
         title="Toutes nos gourmandises"
-        subtitle="Filtrez par envie et composez votre boîte. Chaque création est faite main, fraîche du jour."
+        subtitle="Filtrez par envie et composez votre boîte. Chaque création est faite maison, fraîche du jour."
       />
       <Suspense fallback={<div className="py-20 text-center text-muted">Chargement…</div>}>
         <BoutiqueClient />

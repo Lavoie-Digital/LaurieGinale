@@ -14,7 +14,7 @@ export type CategoryId =
   | "trompe-loeil"
   | "petits-gateaux"
   | "chocolats"
-  | "fete-canada";
+  | "saint-valentin";
 
 export type Category = {
   id: CategoryId;
@@ -33,7 +33,7 @@ export const categories: Category[] = [
     blurb:
       "Des illusions gourmandes si réalistes qu'on hésite à les croquer. La signature de la maison.",
     accent: "#e14b8a",
-    image: "/products/glaze-b.jpg",
+    image: "/to-1.jpg",
   },
   {
     id: "petits-gateaux",
@@ -42,7 +42,7 @@ export const categories: Category[] = [
     blurb:
       "Mignardises, cupcakes garnis et macarons colorés, montés à la main chaque matin.",
     accent: "#b388d9",
-    image: "/products/cupcake-b.jpg",
+    image: "/cup-3.jpg",
   },
   {
     id: "chocolats",
@@ -51,61 +51,61 @@ export const categories: Category[] = [
     blurb:
       "Pralinés, truffes et bonbons fourrés façonnés un à un, à l'unité ou en boîte cadeau.",
     accent: "#6a3f86",
-    image: "/products/choco-box.jpg",
+    image: "/cf-1.jpg",
   },
   {
-    id: "fete-canada",
-    label: "Fête du Canada",
-    short: "Fête du Canada",
+    id: "saint-valentin",
+    label: "St-Valentin",
+    short: "St-Valentin",
     blurb:
-      "Collection thématique rouge & blanc, drapeau à l'appui — un aperçu des créations festives de Laurie.",
-    accent: "#e0322f",
-    image: "/products/cw-cake.jpg",
+      "Paniers gourmands, boîtes cœurs et coffrets à offrir — l'amour se déguste en rouge et en chocolat.",
+    accent: "#e14b8a",
+    image: "/saintvalentin2.jpg",
   },
 ];
 
 export const products: Product[] = [
   // ── Trompe-l'œil ───────────────────────────────────────────────
   {
-    id: "tl-dome",
-    name: "Dôme chocolat brillant",
+    id: "tl-burger",
+    name: "Burger trompe-l'œil",
     category: "trompe-loeil",
-    image: "/products/glaze-b.jpg",
-    blurb: "Mousse au chocolat sous un miroir glacé — bluffant de brillance.",
+    image: "/to-1.jpg",
+    blurb: "Un macaron déguisé en burger : coques moelleuses et garnitures en sucre. Bluffant.",
     badge: "Signature",
-    variants: [
-      { label: "À l'unité", price: 14 },
-      { label: "Boîte collection", price: 72 },
-    ],
-  },
-  {
-    id: "tl-coeur",
-    name: "Cœur fruits rouges",
-    category: "trompe-loeil",
-    image: "/products/red-c.jpg",
-    blurb: "Entremets glacé framboise au reflet miroir, troublant de réalisme.",
-    variants: [
-      { label: "À l'unité", price: 12 },
-      { label: "Boîte collection", price: 64 },
-    ],
-  },
-  {
-    id: "tl-fruits",
-    name: "Illusion fruits du verger",
-    category: "trompe-loeil",
-    image: "/products/glaze-d.jpg",
-    blurb: "Fines crêpes, crème et fruits frais — l'illusion d'un verger croqué.",
     variants: [
       { label: "À l'unité", price: 9 },
       { label: "Boîte collection", price: 48 },
     ],
   },
   {
-    id: "tl-boite",
+    id: "tl-pomme",
+    name: "Pomme givrée",
+    category: "trompe-loeil",
+    image: "/to-2.jpg",
+    blurb: "Entremets glaçage miroir framboise en forme de pomme croquée, feuille de menthe fraîche.",
+    variants: [
+      { label: "À l'unité", price: 12 },
+      { label: "Boîte collection", price: 64 },
+    ],
+  },
+  {
+    id: "tl-monsieur",
+    name: "Monsieur Moustache",
+    category: "trompe-loeil",
+    image: "/to-3.jpg",
+    blurb: "Dôme vanille coiffé d'un chapeau et d'une moustache en chocolat noir. Plein d'humour.",
+    variants: [
+      { label: "À l'unité", price: 11 },
+      { label: "Boîte collection", price: 58 },
+    ],
+  },
+  {
+    id: "tl-vitrine",
     name: "Boîte collection trompe-l'œil",
     category: "trompe-loeil",
-    image: "/products/petitgateau-c.jpg",
-    blurb: "Assortiment surprise de 9 illusions gourmandes, présentées en écrin.",
+    image: "/to-4.jpg",
+    blurb: "Assortiment surprise de nos plus belles illusions gourmandes, présentées en écrin.",
     badge: "Coup de cœur",
     variants: [{ label: "Boîte collection (9 pièces)", price: 64 }],
   },
@@ -115,7 +115,7 @@ export const products: Product[] = [
     id: "pg-cupcake-fleur",
     name: "Cupcake jardin fleuri",
     category: "petits-gateaux",
-    image: "/products/cupcake-b.jpg",
+    image: "/cup-1.jpg",
     blurb: "Génoise vanille, crème au beurre meringuée pochée en pétales.",
     variants: [
       { label: "À l'unité", price: 5.5 },
@@ -126,7 +126,7 @@ export const products: Product[] = [
     id: "pg-cupcake-fruits",
     name: "Cupcake fruits rouges",
     category: "petits-gateaux",
-    image: "/products/cupcake-c.jpg",
+    image: "/cup-2.jpg",
     blurb: "Cœur coulant aux petits fruits, chantilly mascarpone.",
     variants: [
       { label: "À l'unité", price: 5.5 },
@@ -137,7 +137,7 @@ export const products: Product[] = [
     id: "pg-cupcake-choco",
     name: "Cupcake choco-caramel",
     category: "petits-gateaux",
-    image: "/products/cupcake-d.jpg",
+    image: "/cup-3.jpg",
     blurb: "Chocolat noir 64 %, caramel à la fleur de sel coulant.",
     badge: "Best-seller",
     variants: [
@@ -149,7 +149,7 @@ export const products: Product[] = [
     id: "pg-petitgateau",
     name: "Entremets crème & fruits",
     category: "petits-gateaux",
-    image: "/products/petitgateau-a.jpg",
+    image: "/cup-4.jpg",
     blurb: "Mille-feuille déstructuré, crème légère et fruits frais de saison.",
     variants: [{ label: "À l'unité", price: 8.5 }],
   },
@@ -157,7 +157,7 @@ export const products: Product[] = [
     id: "pg-tartelette",
     name: "Tartelette dorée",
     category: "petits-gateaux",
-    image: "/products/petitgateau-b.jpg",
+    image: "/cup-1.jpg",
     blurb: "Pâte sablée pur beurre, crème pâtissière et caramel ambré.",
     variants: [{ label: "À l'unité", price: 7 }],
   },
@@ -165,7 +165,7 @@ export const products: Product[] = [
     id: "pg-macarons",
     name: "Macarons de Laurie",
     category: "petits-gateaux",
-    image: "/products/macaron-a.jpg",
+    image: "/cup-2.jpg",
     blurb: "Coques lisses et garnitures changeantes — la couleur de l'humeur du jour.",
     badge: "Coloré",
     variants: [
@@ -177,7 +177,7 @@ export const products: Product[] = [
     id: "pg-bouquet",
     name: "Bouquet de cupcakes",
     category: "petits-gateaux",
-    image: "/products/bouquet-b.jpg",
+    image: "/cup-3.jpg",
     blurb: "Un assortiment de cupcakes festifs réunis comme un bouquet à offrir.",
     badge: "À offrir",
     variants: [{ label: "Bouquet (7 pièces)", price: 55 }],
@@ -188,7 +188,7 @@ export const products: Product[] = [
     id: "ch-pralines",
     name: "Pralinés assortis",
     category: "chocolats",
-    image: "/products/choco-box.jpg",
+    image: "/cf-1.jpg",
     blurb: "Ganaches et pralinés maison, enrobage tempéré brillant.",
     badge: "Signature",
     variants: [
@@ -201,7 +201,7 @@ export const products: Product[] = [
     id: "ch-truffes",
     name: "Truffes velours",
     category: "chocolats",
-    image: "/products/cw-box.jpg",
+    image: "/cf-1.jpg",
     blurb: "Cœur fondant chocolat noir, roulées à la main au cacao.",
     variants: [
       { label: "À l'unité", price: 2 },
@@ -213,7 +213,7 @@ export const products: Product[] = [
     id: "ch-bonbons",
     name: "Bonbons fourrés",
     category: "chocolats",
-    image: "/products/choco-c.jpg",
+    image: "/cf-1.jpg",
     blurb: "Carrés garnis de gianduja, noisette et caramel.",
     variants: [
       { label: "À l'unité", price: 2.5 },
@@ -225,7 +225,7 @@ export const products: Product[] = [
     id: "ch-tablette",
     name: "Tablette grand cru",
     category: "chocolats",
-    image: "/products/cacake-c.jpg",
+    image: "/cf-1.jpg",
     blurb: "Chocolat d'origine, conché longuement — pure dégustation.",
     variants: [{ label: "Tablette 90 g", price: 9 }],
   },
@@ -233,7 +233,7 @@ export const products: Product[] = [
     id: "ch-signature",
     name: "Écrin signature",
     category: "chocolats",
-    image: "/products/choco-d.jpg",
+    image: "/cf-1.jpg",
     blurb: "La boîte cadeau par excellence : 12 chocolats, tous différents.",
     badge: "À offrir",
     variants: [
@@ -242,51 +242,47 @@ export const products: Product[] = [
     ],
   },
 
-  // ── Fête du Canada (rouge & blanc, drapeau canadien) ──────────
+  // ── St-Valentin (paniers & coffrets rouges, cœurs) ────────────
   {
-    id: "ca-cupcake",
-    name: "Cupcake feuille d'érable",
-    category: "fete-canada",
-    image: "/products/cw-d2.jpg",
-    blurb: "Glaçage vanille blanc et éclats dorés — fièrement rouge et blanc.",
-    badge: "Édition fêtes",
+    id: "sv-panier",
+    name: "Panier gourmand St-Valentin",
+    category: "saint-valentin",
+    image: "/saintvalentin2.jpg",
+    blurb: "Chocolats fins, douceurs et toutou tout doux, emballés d'un ruban rouge. Prêt à offrir.",
+    badge: "Édition St-Valentin",
     variants: [
-      { label: "À l'unité", price: 6 },
-      { label: "Demi-douzaine", price: 33 },
+      { label: "Petit panier", price: 45 },
+      { label: "Grand panier", price: 75 },
     ],
   },
   {
-    id: "ca-gateau",
-    name: "Grand gâteau du Canada",
-    category: "fete-canada",
-    image: "/products/cw-cake.jpg",
-    blurb: "Gâteau à étages crème blanche et fraises rouges, pour les grandes tablées.",
-    badge: "Pièce centrale",
+    id: "sv-boite-coeurs",
+    name: "Boîte de chocolats cœurs",
+    category: "saint-valentin",
+    image: "/saintvalentin3.jpg",
+    blurb: "Nos chocolats fins dans un écrin tout en cœurs rouges, noué d'un joli ruban.",
+    badge: "À offrir",
     variants: [
-      { label: "8 à 10 portions", price: 68 },
-      { label: "16 à 20 portions", price: 115 },
+      { label: "Boîte de 6", price: 18 },
+      { label: "Boîte de 12", price: 34 },
     ],
   },
   {
-    id: "ca-chocolats",
-    name: "Petits chocolats rouge & blanc",
-    category: "fete-canada",
-    image: "/products/cw-straw.jpg",
-    blurb: "Bouchées blanches et rouges à croquer — l'esprit du 1er juillet.",
-    variants: [
-      { label: "Boîte de 6", price: 14 },
-      { label: "Boîte de 12", price: 26 },
-    ],
+    id: "sv-duo",
+    name: "Coffret duo amoureux",
+    category: "saint-valentin",
+    image: "/saintvalentin2.jpg",
+    blurb: "Deux écrins assortis pour partager à deux — ou se gâter sans compter.",
+    variants: [{ label: "Coffret duo", price: 52 }],
   },
   {
-    id: "ca-boite",
-    name: "Boîte Fête du Canada",
-    category: "fete-canada",
-    image: "/products/strawberry-a.jpg",
-    blurb:
-      "L'assortiment festif complet : toutes les petites pâtisseries thématiques réunies.",
-    badge: "Édition limitée",
-    variants: [{ label: "Grande boîte (12 pièces)", price: 58 }],
+    id: "sv-toutou",
+    name: "Panier toutou & chocolats",
+    category: "saint-valentin",
+    image: "/saintvalentin3.jpg",
+    blurb: "Un toutou câlin niché parmi les chocolats et friandises rouges. Coup de cœur garanti.",
+    badge: "Coup de cœur",
+    variants: [{ label: "Panier (1 toutou)", price: 48 }],
   },
 ];
 

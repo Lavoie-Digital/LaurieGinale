@@ -19,7 +19,7 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { count } = useCart();
+  const { count, openCart } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -91,10 +91,10 @@ export default function Navbar() {
             >
               Commander
             </Link>
-            <Link
-              href="/panier"
-              aria-label={`Panier, ${count} article${count > 1 ? "s" : ""}`}
-              className="relative grid h-10 w-10 place-items-center rounded-full bg-white/70 text-ink ring-1 ring-black/5 transition-colors hover:bg-white"
+            <button
+              onClick={openCart}
+              aria-label={`Ouvrir le panier, ${count} article${count > 1 ? "s" : ""}`}
+              className="relative grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-white/70 text-ink ring-1 ring-black/5 transition-colors hover:bg-white"
             >
               <ShoppingBag className="h-[18px] w-[18px]" />
               <AnimatePresence>
@@ -111,7 +111,7 @@ export default function Navbar() {
                   </motion.span>
                 )}
               </AnimatePresence>
-            </Link>
+            </button>
             <button
               onClick={() => setOpen(true)}
               aria-label="Ouvrir le menu"

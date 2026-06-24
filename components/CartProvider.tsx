@@ -24,6 +24,9 @@ type CartContextType = {
   count: number;
   total: number;
   lastAdded: string | null;
+  isOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
   addItem: (item: Omit<CartItem, "key" | "qty">, qty?: number) => void;
   updateQty: (key: string, qty: number) => void;
   removeItem: (key: string) => void;
@@ -37,6 +40,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [lastAdded, setLastAdded] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openCart = useCallback(() => setIsOpen(true), []);
+  const closeCart = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
     try {
@@ -94,8 +101,20 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   );
 
   const value = useMemo(
-    () => ({ items, count, total, lastAdded, addItem, updateQty, removeItem, clear }),
-    [items, count, total, lastAdded, addItem, updateQty, removeItem, clear],
+    () => ({
+      items,
+      count,
+      total,
+      lastAdded,
+      isOpen,
+      openCart,
+      closeCart,
+      addItem,
+      updateQty,
+      removeItem,
+      clear,
+    }),
+    [items, count, total, lastAdded, isOpen, openCart, closeCart, addItem, updateQty, removeItem, clear],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

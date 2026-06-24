@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
-            Des petits luxes à s'offrir, faits main chaque jour à Chicoutimi.
+            Des petits luxes à s'offrir, faits maison chaque jour à Chicoutimi.
             Chocolats fins, trompe-l'œil et pâtisseries sur mesure.
           </p>
           <div className="mt-6 flex gap-3">

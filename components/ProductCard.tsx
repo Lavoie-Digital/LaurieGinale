@@ -2,28 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Plus, Check } from "lucide-react";
+import { Plus, Check, Heart } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { type Product, formatPrice } from "@/lib/products";
 import { useCart } from "./CartProvider";
-
-const MAPLE =
-  "M383.8 351.7c-1.5-3.6-7.9-1.5-7.9-1.5l-58.6 10.3c2.3-7.7 4-20.4 0-27.3-3.4-5.9-14.7-3.9-14.7-3.9l44.6-44.2c-12.6-3.6-9.7-12.9-7.4-22l-39.6 9.3 8.6-22.7c-9.9 1.6-19.9 3.4-29.9 4.9 .9-15.6 1.8-31.2 2.6-46.8l-23.6 19.4c-3.6 1.5-5.9-3.4-5.9-3.4l-21.6-41.8-21.6 41.8s-2.3 4.9-5.9 3.4l-23.6-19.4c .9 15.6 1.8 31.2 2.6 46.8-10-1.5-20-3.3-29.9-4.9l8.6 22.7-39.6-9.3c2.3 9.1 5.2 18.4-7.4 22l44.6 44.2s-11.3-2-14.7 3.9c-4 6.9-2.3 19.6 0 27.3l-58.6-10.3s-6.4-2.1-7.9 1.5c-1.4 3.5 3.4 6.4 3.4 6.4l84.8 46.6c4.3 2.4 3.1 6.1 2.6 8.4l-4.9 22.7 60.2-7.4c3.6-.4 3.4 2.9 3.4 2.9l-2.6 73.7h18.4l-2.6-73.7s-.2-3.3 3.4-2.9l60.2 7.4-4.9-22.7c-.5-2.3-1.7-6 2.6-8.4l84.8-46.6s4.8-2.9 3.4-6.4z";
-
-function CanadaFlag() {
-  return (
-    <span className="flex h-7 w-14 items-center justify-center overflow-hidden rounded-md bg-white shadow-[0_6px_18px_-6px_rgba(0,0,0,0.5)] ring-1 ring-black/10">
-      <svg viewBox="0 0 64 32" className="h-full w-full" aria-hidden>
-        <rect width="64" height="32" fill="#ffffff" />
-        <rect width="16" height="32" fill="#d52b1e" />
-        <rect x="48" width="16" height="32" fill="#d52b1e" />
-        <g transform="translate(32 16) scale(0.0317) translate(-256 -256)">
-          <path d={MAPLE} fill="#d52b1e" />
-        </g>
-      </svg>
-    </span>
-  );
-}
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
@@ -61,9 +43,9 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.badge}
           </span>
         )}
-        {product.category === "fete-canada" && (
-          <span className="absolute right-3 top-3">
-            <CanadaFlag />
+        {product.category === "saint-valentin" && (
+          <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-rose shadow-[0_6px_18px_-6px_rgba(0,0,0,0.4)] ring-1 ring-black/5 backdrop-blur">
+            <Heart className="h-4 w-4 fill-rose" />
           </span>
         )}
       </div>
